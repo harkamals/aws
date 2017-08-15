@@ -20,7 +20,6 @@ Python has the native libraries to decode data format:
 Base64 encoding > gzip compression > JSON > List > Dictionary > Key:Value pair
 '''
 
-
 import json
 import gzip
 from StringIO import StringIO
