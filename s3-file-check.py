@@ -1,6 +1,6 @@
 ####################################################################
 #   s3-file-check.py
-#   Enumerates s3 file for today and sends notifications otherwise
+#   Enumerates s3 files for today and sends notifications otherwise
 #   v1.0 30/08/2017 Harkamal Singh
 #   engineering-cloud@
 ####################################################################
