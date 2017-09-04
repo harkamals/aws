@@ -32,13 +32,12 @@ def send_sns_notification(message):
     #
 
 
-today_prefix = (datetime.datetime.utcnow().strftime("%Y%m%d"))
-# today_prefix = "20170829"
-
-
 def lambda_handler(event, context):
     print('Debug: Event received:', json.dumps(event, indent=2))
     print('Debug: Context vars:  ', vars(context))
+
+    today_prefix = (datetime.datetime.utcnow().strftime("%Y%m%d"))
+    # today_prefix = "20170829"
 
     print("S3 file check for today: [%s]" % today_prefix)
     for bucket in ["dev-ds-syslogs", "dev-spark-syslogs"]:
