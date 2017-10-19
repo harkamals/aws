@@ -1,0 +1,11 @@
+[Unit]
+Description=aws-cloudwatch-monitor
+
+[Service]
+Env=http_proxy=http://10.10.10.10:8080
+Env=https_proxy=http://10.10.10.10:8080
+Env=no_proxy=169.254.169.254
+ExecStart=/usr/local/aws-cloudwatch-monitor/aws-cloudwatch-monitor
+
+[Install]
+WantedBy=multi-user.target
