@@ -15,6 +15,8 @@
     sudo systemctl enable aws-cloudwatch-monitor.timer
     sudo systemctl start aws-cloudwatch-monitor.service
     sudo systemctl start aws-cloudwatch-monitor.timer
+    
+    systemctl list-timers --all
     ```
 
 * Enjoy your metric on AWS CloudWatch
