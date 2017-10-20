@@ -40,8 +40,6 @@ func Main()  {
 		os.Exit(1)
 	}
 
-	fmt.Println(metadata)
-
 	memUtil, memUsed, memAvail, swapUtil, swapUsed, err := memoryUsage()
 
 	var metricData []*cloudwatch.MetricDatum

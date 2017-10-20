@@ -54,8 +54,8 @@ func addMetric(name, unit string, value float64, dimensions []*cloudwatch.Dimens
 
 func putMetric(metricdata []*cloudwatch.MetricDatum, namespace, region string) error {
 
-	session := session.New(&aws.Config{Region: &region})
-	svc := cloudwatch.New(session)
+	session2 := session.New(&aws.Config{Region: &region})
+	svc := cloudwatch.New(session2)
 
 	metric_input := &cloudwatch.PutMetricDataInput{
 		MetricData: metricdata,
