@@ -14,7 +14,7 @@ import (
 //go-aws-mon --namespace="Linux/System" --mem-util --mem-used --mem-avail --swap-util --swap-used  --disk-space-util --disk-inode-util --disk-space-used --disk-space-avail --disk-path=PATH
 
 func Main()  {
-	fmt.Printf("aws_cloudwatch_monitor is starting", runtime.GOOS, runtime.GOARCH)
+	fmt.Printf("aws_cloudwatch_monitor is starting: [%s %s]", runtime.GOOS, runtime.GOARCH)
 
 	isAggregated := flag.Bool("aggregated", false, "Adds aggregated metrics for instance type, AMI ID, and overall for the region")
 	isAutoScaling := flag.Bool("auto-scaling", false, "Adds aggregated metrics for the Auto Scaling group")
@@ -50,6 +50,8 @@ func Main()  {
 	if !*isAggregated {
 		dims = getDimensions(metadata)
 	}
+
+	fmt.Println("Got dimensions:", dims)
 
 	if *isAutoScaling {
 		if as, err := getAutoscalingGroup(metadata["instanceId"], metadata["region"]); as != nil && err == nil {
