@@ -8,12 +8,13 @@ import (
 	"os"
 	"strings"
 	"fmt"
+	"runtime"
 )
 
 //go-aws-mon --namespace="Linux/System" --mem-util --mem-used --mem-avail --swap-util --swap-used  --disk-space-util --disk-inode-util --disk-space-used --disk-space-avail --disk-path=PATH
 
 func Main()  {
-	fmt.Println("aws_cloudwatch_monitor is starting")
+	fmt.Printf("aws_cloudwatch_monitor is starting", runtime.GOOS, runtime.GOARCH)
 
 	isAggregated := flag.Bool("aggregated", false, "Adds aggregated metrics for instance type, AMI ID, and overall for the region")
 	isAutoScaling := flag.Bool("auto-scaling", false, "Adds aggregated metrics for the Auto Scaling group")
