@@ -10,6 +10,8 @@ import (
 	"fmt"
 )
 
+//go-aws-mon --namespace="Linux/System" --mem-util --mem-used --mem-avail --swap-util --swap-used  --disk-space-util --disk-inode-util --disk-space-used --disk-space-avail --disk-path=PATH
+
 func Main()  {
 	fmt.Println("aws_cloudwatch_monitor is starting")
 
